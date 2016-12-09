@@ -1,0 +1,14 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: 'http://188.226.185.99/'
+    database_port: null
+    database_name: wifipu
+    database_user: antoine
+    database_password: antoine2014
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    locale: es
+    secret: 48c39b41378cccd0e8f62220817371efa5df55f9
+    database_path: null

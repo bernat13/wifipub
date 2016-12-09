@@ -1,0 +1,4 @@
+a_wifi_pub:
+    resource: "@AWifiPubBundle/Resources/config/routing.yml"
+    prefix:   /
+
