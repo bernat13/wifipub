@@ -1,0 +1,52 @@
+{% extends 'AWifiPubBundle::layout.html.twig' %}
+
+{% block contenido %}
+
+<h2>{{titulo}}</h2>
+
+<form name="formbuscar" action="{{ path('wifipub_lstado', {'id_estado': id_estado,'pag':pag})}}" method="POST">
+  Filtrar por estado:
+    <select  name="id_estado">
+       <option value="0">--ver todos--</option>
+              {% for e in Estados %}
+                  <option value="{{e.id}}">{{e.Descripcion}}</option>
+                {% endfor %}
+      </select>
+      <input type="submit" value="buscar" name="buscar" />
+
+</form>
+
+<table class="listado">
+      <tr>
+    	  <th>NumSerie</th>
+        <th>Estado</th>
+          <th class="fecha_t">FechaEstado</th>
+        <th>Articulo</th>
+        <th>Proveedor</th>
+        <th class="fecha_t">FechaProveedor</th>
+        <th>Instalador</th>
+        <th class="fecha_t">FechaInstalador</th>
+        <th>Cliente</th>
+        <th>Instalación</th>
+        <th class="fecha_t">FechaInstalación</th>
+      </tr>
+ {% for elemento in elementos %}
+      <tr>
+          <td>{{elemento.NumSerie}}</td>
+          <td>{{elemento.Estado}}</td>  
+            <td class="fecha_t">{{elemento.FechaEstado}}</td>         
+          <td>{{elemento.Articulo}}</td>
+          <td>{{elemento.Proveedor}}</td>
+          <td class="fecha_t">{{elemento.FechaProveedor}}</td>
+          <td>{{elemento.Instalador}}</td>
+          <td class="fecha_t">{{elemento.FechaInstalador}}</td>
+          <td>{{elemento.Cliente}}</td>
+          <td class="fecha_t">{{elemento.Instalación}}</td>
+          <td class="fecha_t">{{elemento.FechaInstalación}}</td>                                                                                
+      </tr>
+      {% endfor %}
+  </table>
+{% if siguiente is defined %}
+<a href="{{ path('wifipub_lstado', {'id_estado': id_estado,'pag':pag+1})}}">Siguiente</a>
+{% endif %}
+{% endblock %}

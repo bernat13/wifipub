@@ -1,0 +1,33 @@
+{% extends 'AWifiPubBundle::layout.html.twig' %}
+
+ {% block contenido %}
+<h2>Insertar Estado</h2>
+
+{% if mensaje is defined %}
+<b><span style="color: red;">{{ mensaje }}</span></b>
+{% endif %}
+<br/>
+
+<form name="formInsertar" action="{{ path('wifipub_admin_estado_add')}}" method="POST">
+    <table>
+      <tr>
+        <td>
+          Id
+        </td>     
+        <td>
+          <input type="text" name="id" value="{{ id }}" />
+        </td> 
+      </tr>   
+      <tr>
+        <td>
+          Descripción
+        </td>    
+        <td>
+          <input type="text" name="Descripcion" value="{{ Descripcion }}" />
+        </td> 
+      </tr>  
+    </table>
+    <input type="submit" value="insertar" name="insertar" />
+</form>
+
+{% endblock %}

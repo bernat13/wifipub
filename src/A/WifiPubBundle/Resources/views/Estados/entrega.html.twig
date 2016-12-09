@@ -1,0 +1,59 @@
+{% extends 'AWifiPubBundle::layout.html.twig' %}
+
+{% block contenido %}
+
+<h2>{{titulo}}</h2>
+<span style="color:red;">{{mensaje}}</span>
+
+<form name="formEntrega" action="" method="POST">
+    <table>
+    	<tr>
+         	<td>fecha </td>    
+         	<td>
+         	 	<input type="text"  id="fecha" name="fecha" value="" />
+     		</td> 
+ 		</tr>  
+       <tr>
+         	<td>Artículo</td>    
+         	<td>
+         	  <select  name="Articulo">
+         	  		{% for a in Articulos %}
+            			<option value="{{a.id}}">{{a.Descripcion}}</option>
+          			{% endfor %}
+              </select>
+     		</td> 
+ 		</tr>  
+
+ 		<tr>
+         	<td>Instalador</td>    
+         	<td>
+         	  <select  name="Instalador">
+         	  		{% for i in Instaladores %}
+            			<option value="{{i.id}}">{{i.RazonComercial}}</option>
+          			{% endfor %}
+              </select>
+     		</td> 
+ 		</tr>  
+
+ 		<tr>
+         	<td>Documentación</td>    
+         	<td>
+         		<input type="text" id="Doc" name="Doc" value="" />
+     		</td> 
+ 		</tr>  
+ 		<tr>
+         	<td>Nums Serie </td>    
+         	<td>
+         	<textarea rows="10" cols="50" name="numsSerie">
+			</textarea> 
+     		</td> 
+ 		</tr>   
+    </table>
+    <input type="submit" value="insertar" name="insertar" />
+</form>
+<script type="text/javascript">
+	
+  	var f = new Date();
+  document.getElementById('fecha').value=f.getDate() + "-" + (f.getMonth() +1) + "-" + f.getFullYear();
+</script>
+{% endblock %}

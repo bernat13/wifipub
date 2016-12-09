@@ -1,0 +1,24 @@
+{% extends 'AWifiPubBundle::layout.html.twig' %}
+
+{% block contenido %}
+
+<h2>{{titulo}}</h2>
+
+
+
+<table class="listado">
+      <tr>
+      	  <th>Id</th>
+          <th>Descripcion</th>
+      </tr>
+      {% for elemento in elementos %}
+        <tr>
+          <td>{{ elemento.id }}</td>
+          <td><a href="{{ path('wifipub_admin_ver', {'tabla':titulo, 'id': elemento.id}) }}">{{elemento.Descripcion}}</a></td>
+           <td><a href="{{ path('wifipub_admin_edit', {'tabla': titulo,'id': elemento.id})}}"><img src="{{ asset('bundles/awifipub/images/editar.gif') }}" /></a></td>
+          <td><a href="{{ path('wifipub_admin_borrar', {'tabla': titulo,'id': elemento.id})}}"><img src="{{ asset('bundles/awifipub/images/borrar.gif') }}" /></a></td>
+        </tr>
+      {% endfor %}
+  </table>
+  <a href="{{ path('wifipub_admin_add', {'tabla': titulo})}}">Añadir {{titulo}} </a>
+{% endblock %}

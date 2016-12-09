@@ -1,0 +1,69 @@
+wifipub_homepage:
+    pattern:  /
+    defaults: { _controller: AWifiPubBundle:Estados:listaInicial }
+
+wifipub_lstado:
+    pattern:  /ns/{id_estado}/{pag}
+    defaults: {_controller: AWifiPubBundle:Estados:lista}
+wifipub_recepcion:
+    pattern:  /Recepcion
+    defaults: { _controller: AWifiPubBundle:Estados:Recepcion }
+wifipub_cambio:
+    pattern:  /Cambio
+    defaults: { _controller: AWifiPubBundle:Estados:CambioEstado }
+wifipub_entrega:
+    pattern:  /Entrega
+    defaults: { _controller: AWifiPubBundle:Estados:EntregaInstalador }
+wifipub_instalacion:
+    pattern:  /Instalacion
+    defaults: { _controller: AWifiPubBundle:Estados:Instalacion }
+wifipub_admin:
+    pattern:  /{tabla}
+    defaults: { _controller: AWifiPubBundle:Admin:index }
+
+wifipub_admin_estado_add:
+    pattern:  /Estados/add
+    defaults: { _controller: AWifiPubBundle:Admin:addEstado }
+
+wifipub_admin_articulo_add:
+    pattern:  /Articulos/add
+    defaults: { _controller: AWifiPubBundle:Admin:addArticulo }
+
+wifipub_admin_articulo_set:
+    pattern:  /Articulos/edit/{id}
+    defaults: { _controller: AWifiPubBundle:Admin:setArticulo }
+wifipub_admin_estado_set:
+    pattern:  /Estados/edit/{id}
+    defaults: { _controller: AWifiPubBundle:Admin:setEstado }
+wifipub_admin_insalacion_set:
+    pattern:  /Instalaciones/edit/{id}
+    defaults: { _controller: AWifiPubBundle:Admin:setInstalacion }
+
+wifipub_admin_instalacion_add:
+    pattern:  /Instalaciones/add
+    defaults: { _controller: AWifiPubBundle:Admin:addInstalacion }
+    
+wifipub_admin_add:
+    pattern:  /{tabla}/add
+    defaults: { _controller: AWifiPubBundle:Admin:add }
+
+wifipub_admin_edit:
+      pattern:  /{tabla}/edit/{id}
+      defaults: { _controller: AWifiPubBundle:Admin:modificar }
+
+wifipub_admin_borrar:
+    pattern:  /{tabla}/delete/{id}
+    defaults: { _controller: AWifiPubBundle:Admin:borrar }
+
+
+wifipub_historico_ver:
+    pattern:  /NumSerie/{serial}
+    defaults: { _controller: AWifiPubBundle:Estados:obtener }
+
+wifipub_admin_ver:
+    pattern:  /{tabla}/{id}
+    defaults: { _controller: AWifiPubBundle:Admin:obtener }
+
+
+
+

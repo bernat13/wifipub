@@ -1,0 +1,107 @@
+{% extends 'AWifiPubBundle::layout.html.twig' %}
+
+ {% block contenido %}
+<h2>Insertar Instalación</h2>
+
+{% if mensaje is defined %}
+<b><span style="color: red;">{{ mensaje }}</span></b>
+{% endif %}
+<br/>
+
+<form name="formInsertar" action="{{ path('wifipub_admin_instalacion_add')}}" method="POST">
+    <table>
+      <tr>
+        <td>
+          Descripcion
+        </td>     
+        <td>
+          <input type="text" name="Descripcion" value="{{ Descripcion }}" />
+        </td> 
+      </tr>   
+      <tr>
+        <td>
+          Direccion
+        </td>     
+        <td>
+          <input type="text" name="Direccion" value="{{ Direccion }}" />
+        </td> 
+      </tr>   
+      <tr>
+        <td>
+          ContactoNombre
+        </td>     
+        <td>
+          <input type="text" name="ContactoNombre" value="{{ ContactoNombre }}" />
+        </td> 
+      </tr>   
+      <tr>
+        <td>
+          Email
+        </td>     
+        <td>
+          <input type="text" name="Email" value="{{ Email }}" />
+        </td> 
+      </tr>   
+      <tr>
+        <td>
+          Telf
+        </td>     
+        <td>
+          <input type="text" name="Telf" value="{{ Telf }}" />
+        </td> 
+      </tr>   
+      <tr>
+        <td>
+          PosicionGPS
+        </td>     
+        <td>
+          <input type="text" name="PosicionGPS" value="{{ PosicionGPS }}" />
+        </td> 
+      </tr>   
+      <tr>
+        <td>
+          TipoInstalacion
+        </td>     
+        <td>
+          <select  name="TipoInstalacion">
+            <option value="1">Bar</option>
+            <option value="2">Restaurante</option>
+          </select>
+        </td> 
+      </tr>   
+      <tr>
+        <td>
+          TipoAccesoInternet
+        </td>     
+        <td>
+          <select  name="TipoAccesoInternet">
+            <option value="1">FTTH</option>
+            <option value="2">ADSL</option>
+            <option value="3">Wimax</option>
+            <option value="4">4G</option>            
+          </select>
+        </td> 
+      </tr>   
+      <tr>
+        <td>
+          DownMbps
+        </td>     
+        <td>
+          <input type="text" name="DownMbps" value="{{ DownMbps }}" />
+         
+        </td> 
+      </tr>   
+      <tr>
+        <td>
+          UpMbps
+        </td>     
+        <td>
+          <input type="text" name="UpMbps" value="{{ UpMbps }}" />
+        </td> 
+      </tr>   
+     
+    </table>
+    <input type="submit" value="insertar" name="insertar" />
+</form>
+
+{% endblock %}

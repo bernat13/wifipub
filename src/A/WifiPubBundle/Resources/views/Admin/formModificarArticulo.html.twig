@@ -1,0 +1,23 @@
+{% extends 'AWifiPubBundle::layout.html.twig' %}
+
+ {% block contenido %}
+<h2>Modificar Artículo</h2>
+
+{% if mensaje is defined %}
+<b><span style="color: red;">{{ mensaje }}</span></b>
+{% endif %}
+<br/>
+
+<form name="formInsertar" action="{{ path('wifipub_admin_articulo_set',{'id': id})}}" method="POST">
+    <table>
+        <tr>
+         	<td>Descripcion </td>    
+         	<td>
+         	 	<input type="text" name="Descripcion" value="{{ Descripcion }}" />
+     		</td> 
+ 		</tr>   
+    </table>
+    <input type="submit" value="Modificar" name="Modificar" />
+</form>
+
+{% endblock %}

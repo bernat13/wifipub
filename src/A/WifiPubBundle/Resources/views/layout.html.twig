@@ -1,0 +1,67 @@
+{% extends '::base.html.twig' %}
+{% block title %}
+ Gestión WifiPub
+{% endblock %}
+{% block stylesheets %}
+ <link href="{{ asset('bundles/awifipub/css/estilo.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+{% block body %}
+<div id="cabecera">
+  <h1>Gestión de routers</h1>
+</div>
+<div class="fecha">
+<script type="text/javascript">
+ 
+var dias_semana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sabado");
+var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre", "Diciembre");
+var fecha_actual = new Date();
+ 
+document.write(dias_semana[fecha_actual.getDay()] +" " + fecha_actual.getDate() + " de " + meses[fecha_actual.getMonth()] + " de " + fecha_actual.getFullYear());
+ 
+</script>
+</div>
+<div id="menu">
+
+<ul class="mi-menu">
+  <li><a href="{{ path('wifipub_homepage')}}"> inicio </a></li>
+   <li><a href="{{ path('wifipub_recepcion')}}"> Recepción </a></li>
+     <li><a href="{{ path('wifipub_cambio')}}"> Cambiar Estado </a></li>
+       <li><a href="{{ path('wifipub_entrega')}}"> Entrega instalador </a></li>
+         <li><a href="{{ path('wifipub_instalacion')}}"> Instalacion </a></li>
+  <li>
+    <a href="#"> Administración </a>
+    <ul>
+      <li><a href="{{ path('wifipub_admin',{'tabla':"Proveedores"})}}"> Proveedores </a></li>
+      <li><a href="{{ path('wifipub_admin',{'tabla':"Articulos"})}}"> Artículos </a></li>
+      <li><a href="{{ path('wifipub_admin',{'tabla':"Instaladores"})}}"> Instaladores </a></li>
+       <li><a href="{{ path('wifipub_admin',{'tabla':"Clientes"})}}"> Clientes </a></li>
+      <li><a href="{{ path('wifipub_admin',{'tabla':"Instalaciones"})}}"> Instalaciones </a></li>
+      <li><a href="{{ path('wifipub_admin',{'tabla':"Estados"})}}"> Estados </a></li>
+         <li><a href="{{ path('wifipub_admin',{'tabla':"NumSerie"})}}"> Histórico</a></li>
+    </ul>
+  </li>
+  
+</ul>
+
+</div>
+
+
+
+
+<div id="contenido">
+{% block contenido %}
+
+{% endblock %}
+</div>
+
+<div id="pie">
+<hr/>
+<div align="center">- WifiPub - 
+	<script type="text/javascript"> 
+
+	var fecha = new Date();
+	document.write(fecha.getFullYear());</script>
+</div>
+</div>
+
+{% endblock %}

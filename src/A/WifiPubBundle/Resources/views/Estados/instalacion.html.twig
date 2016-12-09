@@ -1,0 +1,54 @@
+{% extends 'AWifiPubBundle::layout.html.twig' %}
+
+{% block contenido %}
+
+<h2>{{titulo}}</h2>
+<span style="color:red;">{{mensaje}}</span>
+
+
+
+<form name="formInstalacion" action="" method="POST">
+    <table>
+    	<tr>
+         	<td>fecha </td>    
+         	<td>
+         	 	<input type="text"  id="fecha" name="fecha" value="" />
+     		</td> 
+ 		</tr>  
+        <tr>
+         	<td>Cliente </td>    
+         	<td>
+         	   <select  name="Cliente">
+         	  		{% for c in Clientes %}
+            			<option value="{{c.id}}">{{c.RazonComercial}}</option>
+          			{% endfor %}
+              </select>
+          		<a href="{{ path('wifipub_admin_add', {'tabla': "Clientes"})}}"> nuevo cliente</a>
+     		</td> 
+ 		</tr>   
+ 		<tr>
+         	<td>Instalación </td>    
+         	<td>
+         	   <select  name="Instalacion">
+         	  		{% for i in Instalaciones %}
+            			<option value="{{i.id}}">{{i.Descripcion}}</option>
+          			{% endfor %}
+              </select>
+     		</td> 
+ 		</tr>   
+ 		<tr>
+         	<td>Nums Serie </td>    
+         	<td>
+         	<textarea rows="10" cols="50" name="numsSerie">
+			</textarea> 
+     		</td> 
+ 		</tr>   
+    </table>
+    <input type="submit" value="insertar" name="insertar" />
+</form>
+<script type="text/javascript">
+	
+	var f = new Date();
+  document.getElementById('fecha').value=f.getDate() + "-" + (f.getMonth() +1) + "-" + f.getFullYear();
+</script>
+{% endblock %}

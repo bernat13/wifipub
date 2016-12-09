@@ -1,0 +1,65 @@
+{% extends 'AWifiPubBundle::layout.html.twig' %}
+
+ {% block contenido %}
+<h2>Modificar {{tabla}}</h2>
+
+{% if mensaje is defined %}
+<b><span style="color: red;">{{ mensaje }}</span></b>
+{% endif %}
+<br/>
+
+<form name="formInsertar" action="{{ path('wifipub_admin_edit', {'tabla': tabla,'id': id})}}" method="POST">
+    <table>
+        <tr>
+         	<td>Nombre </td>    
+         	<td>
+         	 	<input type="text" name="Nombre" value="{{ Nombre }}" />
+     		</td> 
+ 		</tr> 
+ 		        <tr>
+         	<td>Apellidos </td>    
+         	<td>
+         	 	<input type="text" name="Apellidos" value="{{ Apellidos }}" />
+     		</td> 
+ 		</tr> 
+ 		        <tr>
+         	<td>RazonComercial </td>    
+         	<td>
+         	 	<input type="text" name="RazonComercial" value="{{ RazonComercial }}" />
+     		</td> 
+ 		</tr> 
+ 		        <tr>
+         	<td>Direccion </td>    
+         	<td>
+         	 	<input type="text" name="Direccion" value="{{ Direccion }}" />
+     		</td> 
+ 		</tr> 
+ 		         <tr>
+         	<td>ContactoNombre </td>    
+         	<td>
+         	 	<input type="text" name="ContactoNombre" value="{{ ContactoNombre }}" />
+     		</td> 
+ 		</tr> 
+ 		        <tr>
+         	<td>Email </td>    
+         	<td>
+         	 	<input type="text" name="Email" value="{{ Email }}" />
+     		</td> 
+ 		</tr> 
+ 		        <tr>
+         	<td>Telf </td>    
+         	<td>
+         	 	<input type="text" name="Telf" value="{{ Telf }}" />
+     		</td> 
+ 		</tr> 
+ 		        <tr>
+         	<td>CIF </td>    
+         	<td>
+         	 	<input type="text" name="CIF" value="{{ CIF }}" />
+     		</td> 
+ 		</tr>  
+    </table>
+    <input type="submit" value="Modificar" name="Modificar" />
+</form>
+
+{% endblock %}

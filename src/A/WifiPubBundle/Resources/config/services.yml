@@ -1,0 +1,7 @@
+parameters:
+#    a_wifi_pub.example.class: A\WifiPubBundle\Example
+
+services:
+#    a_wifi_pub.example:
+#        class: %a_wifi_pub.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
